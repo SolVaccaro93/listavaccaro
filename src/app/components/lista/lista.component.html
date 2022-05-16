@@ -1,19 +1,20 @@
 <div class="d-flex flex-column align-items-center">
-    <h1 class="bg-primary">Lista alumnos</h1>
+    <h1 class="bg-primary mt-5">Lista alumnos</h1>
     <ul class="list-group">
 
-        <li class="list-group-item" *ngFor= "let item of listaAlumnos" [ngClass]="item.nota > 5 ? 'aprobado' : 'desaprobado'">
+        <li class="list-group-item" *ngFor="let item of listaAlumnos"
+            [ngClass]="item.nota > 5 ? 'aprobado' : 'desaprobado'">
             {{item.nombre}}
             {{item.apellido | uppercase}}
-            {{item.nota}}
-     
+           ,Nota: {{item.nota}}
+
         </li>
-        </ul>
-        <h1 class="bg-success">Tienen computadora</h1>
-        <ul class="list-group "*ngFor ="let item of listaAlumnos">
-            <li class="list-group-item"*ngIf=" item.tienePc === 'Si'">
-             {{item.nombre}}
-             {{item.apellido}}
-            </li>
-        </ul>
+    </ul>
+    <h1 class="bg-success mt-5">Tienen computadora:</h1>
+    <ul class="list-group" *ngFor="let item of listaAlumnos">
+        <li class="list-group-item" *ngIf=" item.tienePc === 'Si'">
+            {{item.nombre}}
+            {{item.apellido}}
+        </li>
+    </ul>
 </div>
